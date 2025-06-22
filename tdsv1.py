@@ -1,5 +1,5 @@
-#Coded by NGUYỄN DUY KHÁNH
-#YTB: REVIEW TOOL 247
+#Coded by TSTORE
+#YTB: Tstore43vn
 import os
 from time import sleep
 from datetime import datetime
@@ -87,14 +87,14 @@ def check_tiktok(id_tiktok, token):
 
 os.system('clear')
 banner = r'''
-██████╗ ██╗   ██╗██╗   ██╗██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗
-██╔══██╗██║   ██║╚██╗ ██╔╝██║ ██╔╝██║  ██║██╔══██╗████╗  ██║██║  ██║
-██║  ██║██║   ██║ ╚████╔╝ █████╔╝ ███████║███████║██╔██╗ ██║███████║
-██║  ██║██║   ██║  ╚██╔╝  ██╔═██╗ ██╔══██║██╔══██║██║╚██╗██║██╔══██║
-██████╔╝╚██████╔╝   ██║   ██║  ██╗██║  ██║██║  ██║██║ ╚████║██║  ██║
-╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
-                         YTB: REVIEW TOOL 247
-                          NGUYỄN DUY KHÁNH
+                ██████████╗
+                   ████║    
+                   ████║   
+ 		   ████║   
+		   ████║   
+		   ╚═══╝  
+              YTB: TSTORE43VN
+                   TSTORE
 '''
 gach  = '========================================='
 option = f'''{gach}{Colors.green}
