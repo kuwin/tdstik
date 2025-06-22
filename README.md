@@ -6,7 +6,7 @@ Tool auto tiktok traodoisub android free
 - pkg update
 - pkg install python
 - pkg install git
-- git clone https://github.com/ntt3005/tds_tiktok.git
+- git clone https://github.com/kuwin/tdstik.git
 - cd tds_tiktok
 - python tds.py
 
