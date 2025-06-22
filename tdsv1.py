@@ -87,14 +87,14 @@ def check_tiktok(id_tiktok, token):
 
 os.system('clear')
 banner = r'''
-                ██████████╗
-                   ████║    
-                   ████║   
- 		   ████║   
-		   ████║   
-		   ╚═══╝  
-              YTB: TSTORE43VN
-                   TSTORE
+     ██████████╗
+        ████║    
+        ████║   
+ 	████║   
+	████║   
+        ╚═══╝  
+  YTB: TSTORE43VN
+       TSTORE
 '''
 gach  = '========================================='
 option = f'''{gach}{Colors.green}
