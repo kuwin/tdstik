@@ -11,7 +11,7 @@ hong = "\033[1;95m"
 thanh_xau= red + "[" + trang+ "=.=" + red + "] " + trang + "=> "
 thanh_dep= red + "[" + trang+ "=.=" + red + "] " + trang + "=> "
 ##### Cài Thư Viện #####
-from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
+from import Add, Center, Anime, Colors, Colorate, Write, System
 import requests, json
 import os
 import sys
