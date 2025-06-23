@@ -117,7 +117,7 @@ while True:
 		f.close()
 		cache = 'old'
 	except FileNotFoundError:
-		token_tds = Write.Input("Nhập token TDS:", Colors.green_to_yellow, interval=0.25)
+		token_tds = Write.Input("Nhập token TDS:", Colors.green_to_yellow, interval=0.0025)
 		cache = 'new'
 	
 	for _ in range(3):
@@ -132,7 +132,7 @@ while True:
 			while True:
 				print(option_acc)
 				try:
-					choice = int(Write.Input("Lựa chọn của bạn là (Ví dụ: sử dụng acc cũ nhập 1):", Colors.green_to_yellow, interval=0.25))
+					choice = int(Write.Input("Lựa chọn của bạn là (Ví dụ: sử dụng acc cũ nhập 1):", Colors.green_to_yellow, interval=0.0025))
 					if choice in [1,2]:
 						break
 					else:
@@ -160,7 +160,7 @@ while True:
 if check_log == 'success':
 	#Nhập user tiktok
 	while True:
-		id_tiktok = Write.Input("Nhập ID tiktok chạy (lấy ở mục cấu hình web):", Colors.green_to_yellow, interval=0.25)
+		id_tiktok = Write.Input("Nhập ID tiktok chạy (lấy ở mục cấu hình web):", Colors.green_to_yellow, interval=0.0025)
 		for _ in range(3):
 			check_log = check_tiktok(id_tiktok,token_tds)
 			if check_log == 'success' or check_log == 'error_token':
@@ -181,7 +181,7 @@ if check_log == 'success':
 	while True:
 		print(option)
 		try:
-			choice = int(Write.Input("Lựa chọn nhiệm vụ muốn làm (Ví dụ: Follow nhập 1):", Colors.green_to_yellow, interval=0.25))
+			choice = int(Write.Input("Lựa chọn nhiệm vụ muốn làm (Ví dụ: Follow nhập 1):", Colors.green_to_yellow, interval=0.0025))
 			if choice in [1,2]:
 				break
 			else:
@@ -194,7 +194,7 @@ if check_log == 'success':
 	#Nhập delay nhiệm vụ
 	while True:
 		try:
-			delay = int(Write.Input("Thời gian delay giữa các job (giây):", Colors.green_to_yellow, interval=0.25))
+			delay = int(Write.Input("Thời gian delay giữa các job (giây):", Colors.green_to_yellow, interval=0.0025))
 			if delay > 1:
 				break
 			else:
@@ -207,7 +207,7 @@ if check_log == 'success':
 	#Nhập max nhiệm vụ
 	while True:
 		try:
-			max_job = int(Write.Input("Dừng lại khi làm được số nhiệm vụ là:", Colors.green_to_yellow, interval=0.25))
+			max_job = int(Write.Input("Dừng lại khi làm được số nhiệm vụ là:", Colors.green_to_yellow, interval=0.0025))
 			if max_job > 9:
 				break
 			else:
