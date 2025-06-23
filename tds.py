@@ -26,7 +26,7 @@ headers = {
 
 def login_tds(token):
 	try:
-		r = requests.get('https://traodoisub.com/api/?fields=profile&access_token='+token, headers=headers, timeout=5).json()
+		r = requests.get('https://traodoisub.com/api/?fields=profile&access_token='+token, headers=headers, timeout=10).json()
 		if 'success' in r:
 			os.system('clear')
 			print(Colors.green + f"Đăng nhập thành công!\nUser: {Colors.yellow + r['data']['user'] + Colors.green} | Xu hiện tại: {Colors.yellow + r['data']['xu']}")
@@ -39,7 +39,7 @@ def login_tds(token):
 
 def load_job(type_job, token):
 	try:
-		r = requests.get('https://traodoisub.com/api/?fields='+type_job+'&access_token='+token, headers=headers, timeout=5).json()
+		r = requests.get('https://traodoisub.com/api/?fields='+type_job+'&access_token='+token, headers=headers, timeout=10).json()
 		if 'data' in r:
 			return r
 		elif "countdown" in r:
@@ -54,7 +54,7 @@ def load_job(type_job, token):
 
 def duyet_job(type_job, token, uid):
 	try:
-		r = requests.get(f'https://traodoisub.com/api/coin/?type={type_job}&id={uid}&access_token={token}', headers=headers, timeout=5).json()
+		r = requests.get(f'https://traodoisub.com/api/coin/?type={type_job}&id={uid}&access_token={token}', headers=headers, timeout=10).json()
 		if "cache" in r:
 			return r['cache']
 		elif "success" in r:
@@ -72,7 +72,7 @@ def duyet_job(type_job, token, uid):
 
 def check_tiktok(id_tiktok, token):
 	try:
-		r = requests.get('https://traodoisub.com/api/?fields=tiktok_run&id='+id_tiktok+'&access_token='+token, headers=headers, timeout=5).json()
+		r = requests.get('https://traodoisub.com/api/?fields=tiktok_run&id='+id_tiktok+'&access_token='+token, headers=headers, timeout=10).json()
 		if 'success' in r:
 			os.system('clear')
 			print(Colors.green + f"{r['data']['msg']}|ID: {Colors.yellow + r['data']['id'] + Colors.green}")
@@ -117,7 +117,7 @@ while True:
 		f.close()
 		cache = 'old'
 	except FileNotFoundError:
-		token_tds = Write.Input("Nhập token TDS:", Colors.green_to_yellow, interval=0.0025)
+		token_tds = Write.Input("Nhập token TDS:", Colors.green_to_yellow, interval=0.25)
 		cache = 'new'
 	
 	for _ in range(3):
@@ -132,7 +132,7 @@ while True:
 			while True:
 				print(option_acc)
 				try:
-					choice = int(Write.Input("Lựa chọn của bạn là (Ví dụ: sử dụng acc cũ nhập 1):", Colors.green_to_yellow, interval=0.0025))
+					choice = int(Write.Input("Lựa chọn của bạn là (Ví dụ: sử dụng acc cũ nhập 1):", Colors.green_to_yellow, interval=0.25))
 					if choice in [1,2]:
 						break
 					else:
@@ -160,7 +160,7 @@ while True:
 if check_log == 'success':
 	#Nhập user tiktok
 	while True:
-		id_tiktok = Write.Input("Nhập ID tiktok chạy (lấy ở mục cấu hình web):", Colors.green_to_yellow, interval=0.0025)
+		id_tiktok = Write.Input("Nhập ID tiktok chạy (lấy ở mục cấu hình web):", Colors.green_to_yellow, interval=0.25)
 		for _ in range(3):
 			check_log = check_tiktok(id_tiktok,token_tds)
 			if check_log == 'success' or check_log == 'error_token':
@@ -181,7 +181,7 @@ if check_log == 'success':
 	while True:
 		print(option)
 		try:
-			choice = int(Write.Input("Lựa chọn nhiệm vụ muốn làm (Ví dụ: Follow nhập 1):", Colors.green_to_yellow, interval=0.0025))
+			choice = int(Write.Input("Lựa chọn nhiệm vụ muốn làm (Ví dụ: Follow nhập 1):", Colors.green_to_yellow, interval=0.25))
 			if choice in [1,2]:
 				break
 			else:
@@ -194,7 +194,7 @@ if check_log == 'success':
 	#Nhập delay nhiệm vụ
 	while True:
 		try:
-			delay = int(Write.Input("Thời gian delay giữa các job (giây):", Colors.green_to_yellow, interval=0.0025))
+			delay = int(Write.Input("Thời gian delay giữa các job (giây):", Colors.green_to_yellow, interval=0.25))
 			if delay > 1:
 				break
 			else:
@@ -207,7 +207,7 @@ if check_log == 'success':
 	#Nhập max nhiệm vụ
 	while True:
 		try:
-			max_job = int(Write.Input("Dừng lại khi làm được số nhiệm vụ là:", Colors.green_to_yellow, interval=0.0025))
+			max_job = int(Write.Input("Dừng lại khi làm được số nhiệm vụ là:", Colors.green_to_yellow, interval=0.25))
 			if max_job > 9:
 				break
 			else:
